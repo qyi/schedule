@@ -1,0 +1,87 @@
+.x-navigation {
+  background: url(images/navigation/navigation-bkg.png) repeat-y;
+  
+  .x-toolbar-separator-vertical {
+    border-top: 1px solid #0e1115;
+    border-bottom: 1px solid #343d49;
+  }
+  
+  .x-navigation-one-icon {
+    background: url(images/navigation/one-icon.png) no-repeat;
+  }
+  
+  .x-navigation-two-icon {
+    background: url(images/navigation/two-icon.png) no-repeat;
+  }
+  
+  .x-navigation-three-icon {
+    background: url(images/navigation/three-icon.png) no-repeat;
+  }
+  
+  .x-navigation-four-icon {
+    background: url(images/navigation/four-icon.png) no-repeat;
+  }
+}
+
+@include extjs-button-ui(
+  $ui: 'navigation-toolbar-small',
+
+  $border-radius: 0,
+  $border-width: 0px,
+
+  $border-color: transparent,
+  $border-color-over: transparent,
+  $border-color-focus: transparent,
+  $border-color-pressed: transparent,
+  $border-color-disabled: transparent,
+
+  $padding: 26px 18px 26px 17px,
+  $text-padding: $button-small-text-padding,
+
+  $background-color: transparent,
+  $background-color-over: #252d37,
+  $background-color-focus: #252d37,
+  $background-color-pressed: #252d37,
+  $background-color-disabled: transparent,
+
+  $background-gradient: $button-toolbar-background-gradient,
+  $background-gradient-over: transparent,
+  $background-gradient-focus: transparent,
+  $background-gradient-pressed: transparent,
+  $background-gradient-disabled: transparent,
+
+  $color: #bdd7f4,
+  $color-over: #d0e3f8,
+  $color-focus: #bdd7f4,
+  $color-pressed: #d0e3f8,
+  $color-disabled: #bdd7f4,
+
+  $font-size: $button-small-font-size,
+  $font-size-over: $button-small-font-size-over,
+  $font-size-focus: $button-small-font-size-focus,
+  $font-size-pressed: $button-small-font-size-pressed,
+  $font-size-disabled: $button-small-font-size-disabled,
+
+  $font-weight: normal,
+  $font-weight-over: normal,
+  $font-weight-focus: normal,
+  $font-weight-pressed: normal,
+  $font-weight-disabled: normal,
+
+  $font-family: $button-small-font-family,
+  $font-family-over: $button-small-font-family-over,
+  $font-family-focus: $button-small-font-family-focus,
+  $font-family-pressed: $button-small-font-family-pressed,
+  $font-family-disabled: $button-small-font-family-disabled,
+
+  $icon-size: 21px,
+  $glyph-color: $button-toolbar-glyph-color,
+  $glyph-opacity: $button-toolbar-glyph-opacity,
+  $arrow-width: $button-small-arrow-width,
+  $arrow-height: $button-small-arrow-height,
+  $split-width: $button-small-split-width,
+  $split-height: $button-small-split-height,
+
+  $opacity-disabled: $button-toolbar-opacity-disabled,
+  $inner-opacity-disabled: $button-toolbar-inner-opacity-disabled
+);

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="schedule" default=".help">
+    <!--
+    The build-impl.xml file imported here contains the guts of the build process. It is
+    a great idea to read that file to understand how the process works, but it is best to
+    limit your changes to this file.
+    -->
+    <import file="${basedir}/.sencha/app/build-impl.xml"/>
+
+    <!--
+    The following targets can be provided to inject logic before and/or after key steps
+    of the build process:
+
+        The "init-local" target is used to initialize properties that may be personalized
+        for the local machine.
+
+            <target name="-before-init-local"/>
+            <target name="-after-init-local"/>
+
+        The "clean" target is used to clean build output from the build.dir.
+
+            <target name="-before-clean"/>
+            <target name="-after-clean"/>
+
+        The general "init" target is used to initialize all other properties, including
+        those provided by Sencha Cmd.
+
+            <target name="-before-init"/>
+            <target name="-after-init"/>
+        
+        The "page" target performs the call to Sencha Cmd to build the 'all-classes.js' file.
+
+            <target name="-before-page"/>
+            <target name="-after-page"/>
+
+        The "build" target performs the call to Sencha Cmd to build the application.
+
+            <target name="-before-build"/>
+            <target name="-after-build"/>
+    -->
+
+    <target name="init-dev" description="Init depelop dependencies">
+
+      <ant target="download-extjs" />
+      <ant target="init-repositories" />
+      <ant target="install-packages" />
+
+    </target>
+    
+    <target name="download-extjs" description="Download ExtJS source">
+      <echo message="Download ExtJS source..." />
+      <get src="http://cdn.sencha.com/ext/gpl/ext-4.2.1-gpl.zip" dest="${basedir}/ext-4.2.1-gpl.zip"/>
+      
+      <echo message="Extract ExtJS source..." />
+      <unzip src="${basedir}/ext-4.2.1-gpl.zip" dest="${basedir}" />
+      
+      <echo message="Delete ExtJS source zip file..." />
+      <delete file="${basedir}/ext-4.2.1-gpl.zip" />
+      <delete file="${basedir}/ext" />
+
+      <loadproperties srcFile="${basedir}/.sencha/app/sencha.cfg" />
+
+      <echo message="Move extracted file to ext folder" />
+      <move file="${basedir}/ext-${app.framework.version}" tofile="${basedir}/ext" />
+    </target> 
+
+    <target name="init-repositories" description="Init repositories dependencies">
+      <echo message="Init repositories dependencies..." />
+
+      <echo message="Init DeftJS repository" />
+      <exec executable="sencha">
+        <arg line="repo add -address http://packages.deftjs.org/ -name deftjs" />
+      </exec>
+
+    </target>
+    
+    <target name="install-packages" description="Install bower packages">
+      <echo message="Install bower packages..." />
+
+      <exec executable="bower">
+        <arg line="install --allow-root" />
+      </exec>
+
+    </target>
+
+    <target name="-before-build" description="Sencha Cmd build extension point">
+
+      <ant target="compile" />
+
+    </target>
+
+    <target name="compile" description="Compiles CoffeeScript">
+
+      <!-- CoffeeScript should be installed and made available via your PATH.  See: http://coffeescript.org/#installation -->
+      <condition property="coffeeExecutable" value="coffee.cmd">
+        <os family="windows"/>
+      </condition>
+      <condition property="coffeeExecutable" value="coffee">
+        <os family="unix"/>
+      </condition>
+
+      <echo message="Compiling CoffeeScript..." />
+
+      <echo message="Compiling CoffeeScript in ${app.dir}" />
+      <exec executable="${coffeeExecutable}">
+        <arg line="-c -b ${app.dir}" />
+      </exec>
+        
+    </target>
+
+</project>

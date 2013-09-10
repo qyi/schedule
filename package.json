@@ -1,0 +1,19 @@
+{
+  "name": "Krypton",
+  "description": "Krypton",
+  "author": "Andrey Linko <su2ny@mail.ru>",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node_modules/.bin/coffee index.coffee"
+  },
+  "dependencies": {
+    "connect-coffee-script": "~0.1",
+    "express": "~3.0",
+    "coffee-script": "~1.6",
+    "jade-static": "~1.1",
+    "stylus": "~0.32",
+    "thrift": "~0.9",
+    "krypton-workspace-proxy-core": "git+ssh://git@g.monstrs.ru:krypton/krypton-workspace-proxy-core.git",
+    "krypton-client": "git+ssh://git@g.monstrs.ru:krypton/krypton-client.git"
+  }
+}

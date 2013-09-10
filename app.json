@@ -1,0 +1,9 @@
+{
+    "name": "schedule",
+
+    "requires": [
+      "deft@0.9.0?"
+    ],
+
+    "id": "d6ce0edf-5698-4230-b076-ba353728c1da"
+}

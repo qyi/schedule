@@ -1,0 +1,167 @@
+.x-header {
+  background: url(images/header/header-bkg.png) repeat-x;
+  box-shadow: 0px 0px 4px black;
+  z-index: 1;
+  
+  .x-btn-header-nav-toolbar-small {
+    .x-btn-inner {
+      text-decoration: underline;
+    }
+  }
+
+  .x-header-logo {
+    background: url(images/header/logo.png) no-repeat;
+  }
+
+  .x-header-location {
+    font-weight: lighter;
+
+    span {
+      color: white;
+    }
+    
+    div {
+      padding-top: 3px;
+      color: #bdd7f4;
+      border-bottom: 1px dashed #bdd7f4;
+    }
+  }
+  
+  .x-header-user {
+    background: url(images/header/user.png) no-repeat;
+    padding-left: 47px;
+    color: white;
+    line-height: 18px;
+    font-weight: lighter;
+  }
+
+  .x-header-tools-icon {
+    background: url(images/header/header-tools-icon.png) no-repeat;
+  }
+}
+
+@include extjs-button-ui(
+  $ui: 'header-nav-toolbar-small',
+
+  $border-radius: 0,
+  $border-width: 0,
+
+  $border-color: transparent,
+  $border-color-over: transparent,
+  $border-color-focus: transparent,
+  $border-color-pressed: transparent,
+  $border-color-disabled: transparent,
+
+  $padding: $button-small-padding,
+  $text-padding: $button-small-text-padding,
+
+  $background-color: transparent,
+  $background-color-over: transparent,
+  $background-color-focus: transparent,
+  $background-color-pressed: transparent,
+  $background-color-disabled: transparent,
+
+  $background-gradient: $button-toolbar-background-gradient,
+  $background-gradient-over: $button-toolbar-background-gradient-over,
+  $background-gradient-focus: $button-toolbar-background-gradient-focus,
+  $background-gradient-pressed: $button-toolbar-background-gradient-pressed,
+  $background-gradient-disabled: $button-toolbar-background-gradient-disabled,
+
+  $color: #bdd7f4,
+  $color-over: #d0e3f8,
+  $color-focus: #bdd7f4,
+  $color-pressed: #d0e3f8,
+  $color-disabled: #bdd7f4,
+
+  $font-size: $button-small-font-size,
+  $font-size-over: $button-small-font-size-over,
+  $font-size-focus: $button-small-font-size-focus,
+  $font-size-pressed: $button-small-font-size-pressed,
+  $font-size-disabled: $button-small-font-size-disabled,
+
+  $font-weight: normal,
+  $font-weight-over: normal,
+  $font-weight-focus: normal,
+  $font-weight-pressed: normal,
+  $font-weight-disabled: normal,
+
+  $font-family: $button-small-font-family,
+  $font-family-over: $button-small-font-family-over,
+  $font-family-focus: $button-small-font-family-focus,
+  $font-family-pressed: $button-small-font-family-pressed,
+  $font-family-disabled: $button-small-font-family-disabled,
+
+  $icon-size: $button-small-icon-size,
+  $glyph-color: $button-toolbar-glyph-color,
+  $glyph-opacity: $button-toolbar-glyph-opacity,
+  $arrow-width: $button-small-arrow-width,
+  $arrow-height: $button-small-arrow-height,
+  $split-width: $button-small-split-width,
+  $split-height: $button-small-split-height,
+
+  $opacity-disabled: $button-toolbar-opacity-disabled,
+  $inner-opacity-disabled: $button-toolbar-inner-opacity-disabled
+);
+
+@include extjs-button-ui(
+  $ui: 'header-tools-toolbar-small',
+
+  $border-radius: 0,
+  $border-width: 0,
+
+  $border-color: transparent,
+  $border-color-over: transparent,
+  $border-color-focus: transparent,
+  $border-color-pressed: transparent,
+  $border-color-disabled: transparent,
+
+  $padding: 18px 18px 21px 18px,
+  $text-padding: $button-small-text-padding,
+
+  $background-color: black,
+  $background-color-over: black,
+  $background-color-focus: black,
+  $background-color-pressed: black,
+  $background-color-disabled: black,
+
+  $background-gradient: color_stops(#6591d9, #415698),
+  $background-gradient-over: color_stops(#a8c6f7, #415698),
+  $background-gradient-focus: color_stops(#a8c6f7, #415698),
+  $background-gradient-pressed: color_stops(#a8c6f7, #415698),
+  $background-gradient-disabled: color_stops(#6591d9, #415698),
+
+  $color: #bdd7f4,
+  $color-over: #d0e3f8,
+  $color-focus: #bdd7f4,
+  $color-pressed: #d0e3f8,
+  $color-disabled: #bdd7f4,
+
+  $font-size: $button-small-font-size,
+  $font-size-over: $button-small-font-size-over,
+  $font-size-focus: $button-small-font-size-focus,
+  $font-size-pressed: $button-small-font-size-pressed,
+  $font-size-disabled: $button-small-font-size-disabled,
+
+  $font-weight: normal,
+  $font-weight-over: normal,
+  $font-weight-focus: normal,
+  $font-weight-pressed: normal,
+  $font-weight-disabled: normal,
+
+  $font-family: $button-small-font-family,
+  $font-family-over: $button-small-font-family-over,
+  $font-family-focus: $button-small-font-family-focus,
+  $font-family-pressed: $button-small-font-family-pressed,
+  $font-family-disabled: $button-small-font-family-disabled,
+
+  $icon-size: 21px,
+  $glyph-color: $button-toolbar-glyph-color,
+  $glyph-opacity: $button-toolbar-glyph-opacity,
+  $arrow-width: $button-small-arrow-width,
+  $arrow-height: $button-small-arrow-height,
+  $split-width: $button-small-split-width,
+  $split-height: $button-small-split-height,
+
+  $opacity-disabled: $button-toolbar-opacity-disabled,
+  $inner-opacity-disabled: $button-toolbar-inner-opacity-disabled
+);
